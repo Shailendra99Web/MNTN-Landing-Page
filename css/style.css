@@ -1,0 +1,321 @@
+/* Basic styles - Start */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --background: #0B1D26;
+    --foreground: white;
+    --primary: #0B1D26;
+    --secondary: #FBD784;
+    /* --normalFontWeight: 300; */
+    --normalFontSize: 18px;
+    /* --primaryfontFamily: 'Inter', serif; */
+    --formalFont1: "Roboto", sans-serif;
+    --normalLineHight: 32px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* For Selection-color, Highlight-color */
+*::-moz-selection {
+    /* Code for Firefox */
+    color: var(--secondary);
+    background: transparent;
+}
+
+*::selection {
+    color: var(--secondary);
+    background: transparent;
+}
+
+/* Basic style - End */
+
+body {
+    color: var(--foreground);
+    background-color: var(--background);
+    position: relative;
+    height: 2000px;
+}
+
+/* Hero Section Images - Start */
+.image1-cloud {
+    background-image: url(/assets/images/HG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+}
+
+.image2-mountains {
+    background-image: url(/assets/images/MG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    top: 464px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.image3-person-on-mountain {
+    background-image: url(/assets/images/VG.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    top: 754px;
+    left: 0;
+    right: 0;
+}
+
+.bg-layer0-black-white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1200px;
+    /* width: 1920px; */
+    background: #0B1D26;
+    background: linear-gradient(160deg,rgba(11, 29, 38, 0.78) 0%, rgba(11, 29, 38, 0) 30%, rgba(11, 29, 38, 0) 65%, rgba(11, 29, 38, 0) 100%);
+}
+
+.bg-layer1-black-white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1200px;
+    /* width: 1920px; */
+    background: #0B1D26;
+    /* background: linear-gradient(0deg,rgba(11, 29, 38, 0) 0%, rgba(11, 29, 38, 1) 100%); */
+    /* background: linear-gradient(160deg,rgba(11, 29, 38, 0.73) 0%, rgba(11, 29, 38, 0) 100%); */
+    background: linear-gradient(180deg,rgba(11, 29, 38, 0.58) 0%, rgba(11, 29, 38, 0) 100%);
+}
+
+.bg-layer2-black-white {
+    position: absolute;
+    top: 1200px;
+    left: 0;
+    right: 0;
+    /* inset: 1200px 0 auto 0; */
+    height: 700px;
+    /* width: 1920px; */
+    background: #0B1D26;
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, rgba(11, 29, 38, 0.72) 100%);
+}
+
+/* Hero Section Images - End */
+
+/* Navbar styles - Start */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 64px 80px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 32px;
+    font-family: serif;
+}
+
+.nav-items {
+    font-family: var(--formalFont1);
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-items a,
+.footer-navlinks ul a {
+    font-size: var(--normalFontSize);
+    line-height: var(--normalLineHight);
+    font-family: var(--formalFont1);
+    color: var(--foreground);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-items a:hover,
+.footer-navlinks ul a:hover {
+    color: var(--secondary) !important;
+}
+
+nav .userAccount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* .logo, .userAccount{
+    font-family: "Roboto", sans-serif;
+} */
+
+/* Navbar styles - End */
+
+main {
+    top: 198px;
+    margin-bottom: 198px;
+    position: relative;
+    z-index: 1;
+}
+
+.container-info-cards {
+    margin-top: 848px;
+    max-width: 1462px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    position: relative;
+}
+
+.info-card .info-serial-no {
+    font-family: "Anek Telugu", sans-serif;
+    font-weight: 600;
+    font-size: 240px;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    color: rgba(255, 255, 255, 0.200);
+}
+
+.info-card .half-box-text {
+    width: 632px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    margin: 140px 114px 140px 150px;
+}
+
+.info-card .title {
+    font-size: 64px;
+    font-weight: 530;
+}
+
+.info-card .description {
+    font-size: 18px;
+    font-family: var(--formalFont1);
+}
+
+.info-card .read-more {
+    font-size: 18px;
+    color: var(--secondary);
+    font-family: var(--formalFont1);
+}
+
+.hero-section {
+    max-width: 950px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.subtitle {
+    color: var(--secondary);
+    display: flex;
+    gap: 32px;
+    font-size: var(--normalFontSize);
+    font-weight: 800;
+    align-items: center;
+}
+
+.start-dash {
+    display: inline-block;
+    background-color: var(--secondary);
+    width: 72px;
+    height: 2px;
+}
+
+/* .start-dash h3 {
+        font-family: var(--secondaryformalFont);
+} */
+
+.hero-section h1 {
+    font-size: 88px;
+    font-weight: 500;
+    font-family: serif;
+}
+
+.scroll-down {
+    display: flex;
+    gap: 16px;
+    font-size: var(--normalFontSize);
+    font-family: var(--formalFont1);
+}
+
+/* Footer styles - Start */
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1462px;
+    display: flex;
+    padding-top: 200px;
+    justify-content: space-between;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-info p,
+.footer-info span {
+    font-family: var(--formalFont1);
+    font-size: 18px;
+    line-height: var(--normalLineHight);
+    max-width: 303px;
+}
+
+.footer-info span {
+    max-width: auto;
+    text-wrap: nowrap;
+    color: rgba(255, 255, 255, 0.400);
+}
+
+.footer-navlinks {
+    display: flex;
+    gap: 212px;
+}
+
+.footer-navlinks h5 {
+    color: var(--secondary);
+    font-size: 24px;
+    line-height: var(--normalLineHight);
+    font-family: var(--formalFont1);
+}
+
+.footer-navlinks ul {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+/* Footer styles - End */

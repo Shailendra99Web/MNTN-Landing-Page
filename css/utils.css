@@ -1,0 +1,15 @@
+.font-roboto {
+    font-family: var(--formalFont1)
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse!important;
+}
+
+.right-507px{
+    right: 507!important;
+}
+
+.left-auto{
+    left: auto!important;
+}
