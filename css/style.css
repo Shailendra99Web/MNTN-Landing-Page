@@ -36,8 +36,7 @@
 body {
     color: var(--foreground);
     background-color: var(--background);
-    position: relative;
-    height: 2000px;
+    /* position: relative; */
 }
 
 /* Hero Section Images - Start */
@@ -55,11 +54,13 @@ body {
 
 .image2-mountains {
     background-image: url(/assets/images/MG.png);
+    /* background-size: contain; */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     position: absolute;
-    top: 464px;
+    top: 40vh;
+    /* top: 464px; */
     left: 0;
     right: 0;
     z-index: -1;
@@ -67,28 +68,33 @@ body {
 
 .image3-person-on-mountain {
     background-image: url(/assets/images/VG.png);
-    background-size: contain;
+    /* background-size: contain; */
+    background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     position: absolute;
-    top: 754px;
+    z-index: 20;
+    top: 60vh;
+    /* top: 754px; */
     left: 0;
     right: 0;
 }
 
 .bg-layer0-black-white {
     position: absolute;
+    z-index: 6;
     top: 0;
     left: 0;
     right: 0;
     height: 1200px;
     /* width: 1920px; */
     background: #0B1D26;
-    background: linear-gradient(160deg,rgba(11, 29, 38, 0.78) 0%, rgba(11, 29, 38, 0) 30%, rgba(11, 29, 38, 0) 65%, rgba(11, 29, 38, 0) 100%);
+    background: linear-gradient(160deg, rgba(11, 29, 38, 0.78) 0%, rgba(11, 29, 38, 0) 30%, rgba(11, 29, 38, 0) 65%, rgba(11, 29, 38, 0) 100%);
 }
 
 .bg-layer1-black-white {
     position: absolute;
+    z-index: 4;
     top: 0;
     left: 0;
     right: 0;
@@ -97,19 +103,21 @@ body {
     background: #0B1D26;
     /* background: linear-gradient(0deg,rgba(11, 29, 38, 0) 0%, rgba(11, 29, 38, 1) 100%); */
     /* background: linear-gradient(160deg,rgba(11, 29, 38, 0.73) 0%, rgba(11, 29, 38, 0) 100%); */
-    background: linear-gradient(180deg,rgba(11, 29, 38, 0.58) 0%, rgba(11, 29, 38, 0) 100%);
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0.58) 0%, rgba(11, 29, 38, 0) 100%);
 }
 
 .bg-layer2-black-white {
     position: absolute;
-    top: 1200px;
+    /* top: 1200px; */
+    top: calc(50vh + 175px);
+    z-index: 25;
     left: 0;
     right: 0;
     /* inset: 1200px 0 auto 0; */
     height: 700px;
     /* width: 1920px; */
     background: #0B1D26;
-    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, rgba(11, 29, 38, 0.72) 100%);
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, rgba(11, 29, 38, 100) 100%);
 }
 
 /* Hero Section Images - End */
@@ -126,7 +134,7 @@ nav {
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     font-size: 32px;
     font-family: serif;
 }
@@ -146,18 +154,31 @@ nav {
     color: var(--foreground);
     text-decoration: none;
     cursor: pointer;
+    transition: color 80ms linear;
+    transition: transform 150ms linear;
+    display: inline-block;
+    font-weight: 600;
 }
 
 .nav-items a:hover,
-.footer-navlinks ul a:hover {
+.footer-navlinks ul a:hover, .userAccount a:hover {
     color: var(--secondary) !important;
 }
 
-nav .userAccount {
+.nav-items a:hover{
+    transform: translateY(-3px);
+}
+
+nav .userAccount a {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: color 80ms linear;
+    transition: all 80ms linear;
+    cursor: pointer;
 }
 
 /* .logo, .userAccount{
@@ -167,14 +188,58 @@ nav .userAccount {
 /* Navbar styles - End */
 
 main {
-    top: 198px;
+    top: 287px;
     margin-bottom: 198px;
     position: relative;
-    z-index: 1;
+}
+
+.layer-background-color {
+    background: var(--background);
+    position: absolute;
+    /* top: 1680px; */
+    top: calc(100vh + 350px);
+    height: 2626px;
+    /* width: 1920px; */
+    width: 100%;
+    z-index: 25;
+}
+
+.hero-section {
+    z-index: 10;
+    max-width: 950px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: fixed;
+    top: 30vh;
+    /* top: 287px; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.subtitle {
+    color: var(--secondary);
+    display: flex;
+    gap: 32px;
+    font-size: var(--normalFontSize);
+    font-weight: 800;
+    align-items: center;
+}
+
+.start-dash {
+    display: inline-block;
+    background-color: var(--secondary);
+    width: 72px;
+    height: 2px;
 }
 
 .container-info-cards {
-    margin-top: 848px;
+    z-index: 30;
+    /* margin-top: 848px; */
+    /* margin-top: 1153px; */
+    margin-top: 100vh;
     max-width: 1462px;
     position: relative;
     margin-left: auto;
@@ -182,6 +247,7 @@ main {
     gap: 200px;
     display: flex;
     flex-direction: column;
+    /* background-color: var(--background); */
 }
 
 .info-card {
@@ -226,34 +292,14 @@ main {
     font-family: var(--formalFont1);
 }
 
-.hero-section {
-    max-width: 950px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.subtitle {
-    color: var(--secondary);
-    display: flex;
-    gap: 32px;
-    font-size: var(--normalFontSize);
-    font-weight: 800;
-    align-items: center;
-}
-
-.start-dash {
-    display: inline-block;
-    background-color: var(--secondary);
-    width: 72px;
-    height: 2px;
-}
-
-/* .start-dash h3 {
-        font-family: var(--secondaryformalFont);
+/* .info-card .half-box-image{
+    width: 35%;
 } */
+
+.info-card .half-box-image img {
+    /* width: 60vh; */
+    object-fit: cover;
+}
 
 .hero-section h1 {
     font-size: 88px;
@@ -270,11 +316,15 @@ main {
 
 /* Footer styles - Start */
 footer {
+    z-index: 30;
+    position: relative;
+    background-color: var(--background);
     margin-left: auto;
     margin-right: auto;
     max-width: 1462px;
     display: flex;
     padding-top: 200px;
+    padding-bottom: 120px;
     justify-content: space-between;
 }
 
@@ -319,3 +369,37 @@ footer {
 }
 
 /* Footer styles - End */
+
+/* Media query - for responsiveness */
+@media (max-width:1366px) {
+    :root {
+        --normalFontSize: 16px;
+    }
+
+    nav{
+        padding-top: 48px;
+    }
+
+    .hero-section h1 {
+        font-size: 75px;
+        /* max-width: 790px; */
+    }
+
+    .hero-section {
+        max-width: 742px;
+        width: 100%;
+    }
+
+    .info-card .half-box-text {
+        margin: 140px 20px 140px 80px;
+    }
+
+    .info-card .half-box-image {
+        margin: 0 80px 0 40px;
+    }
+
+    footer {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
