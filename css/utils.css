@@ -2,12 +2,12 @@
     font-family: var(--formalFont1)
 }
 
-.flex-row-reverse {
+.info-card-flex-row-reverse {
     flex-direction: row-reverse!important;
 }
 
-.right-507px{
-    right: 507!important;
+.right-500px{
+    right: 500px!important;
 }
 
 .left-auto{
