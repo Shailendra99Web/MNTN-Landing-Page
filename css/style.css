@@ -46,7 +46,8 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     position: absolute;
-    top: 0;
+    /* transition: transform 100ms linear; */
+    top: 0px;
     left: 0;
     right: 0;
     z-index: -2;
@@ -223,10 +224,23 @@ main {
     left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
+    /* transition: opacity 150ms linear; */
 }
 
 .hero-section .scroll-down{
     font-weight: 800;
+}
+
+.hero-section .start-dash{
+    min-width: 72px!important;
+}
+
+.hero-section-view-placeholder{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 95vw;
+    z-index: -20;
 }
 
 .subtitle {
@@ -241,8 +255,11 @@ main {
 .start-dash {
     display: inline-block;
     background-color: var(--secondary);
-    width: 72px;
+    max-width: 20px;
+    width: 100%;
+    /* width: 72px; */
     height: 2px;
+    transition: transform 150ms linear;
 }
 
 .container-info-cards {
@@ -302,18 +319,24 @@ main {
 .info-card .title {
     font-size: 64px;
     font-weight: 530;
+    transition: transform 150ms linear;
+    transform: translateY(20px);
 }
 
 .info-card .description {
     font-size: 18px;
     font-family: var(--formalFont1);
     line-height: var(--normalLineHight);
+    transition: transform 150ms linear;
+    transform: translateY(20px);
 }
 
 .info-card .read-more {
     font-size: 18px;
     color: var(--secondary);
     font-family: var(--formalFont1);
+    transition: transform 150ms linear;
+    transform: translateY(20px);
 }
 
 /* .info-card .half-box-image{
@@ -323,6 +346,21 @@ main {
 .info-card .half-box-image img {
     /* width: 60vh; */
     object-fit: cover;
+}
+
+.info-card .half-box-image {
+    /* width: 60vh; */
+    overflow: hidden;
+}
+
+.info-image:nth-child(odd){
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.info-image:nth-child(even){
+    opacity: 0;
+    transform: translateX(-50px);
 }
 
 .hero-section h1 {
@@ -695,8 +733,8 @@ footer .copyright {
     }
 
     .hero-section {
-        /* max-width: 100%; */
-        max-width: 302px;
+        max-width: 100%;
+        /* max-width: 302px; */
         left: 0px;
         top: 137px;
         padding-left: 8px;
@@ -705,8 +743,8 @@ footer .copyright {
     }
 
     .hero-section h1 {
-        font-size: 38px;
-        line-height: 39px;
+        font-size: 50px;
+        line-height: 55px;
         /* max-width: 425px; */
     }
 
