@@ -52,7 +52,14 @@ body {
     transform: translateY(-50%);
     right: 80px;
     height: 40vh;
+    transition: opacity 400ms linear, visibility 400ms linear;
+    /* opacity: 0; */
+    /* visibility: hidden; */
 }
+
+/* .right-side-nav:hover {
+    opacity: 1!important;
+} */
 
 .right-side-nav ul {
     display: flex;
@@ -589,7 +596,8 @@ footer .copyright {
     }
 
     .bg-layer2-black-white {
-        top: calc(200vh - 60vh - 400px);
+        /* top: calc(200vh - 60vh - 400px); */
+        top: calc(200vh - 400px - 400px);
     }
 
     nav {
@@ -746,6 +754,11 @@ footer .copyright {
 }
 
 @media only screen and (max-width: 744px) {
+    .right-side-nav {
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
     .hero-section {
         max-width: 528px;
     }
