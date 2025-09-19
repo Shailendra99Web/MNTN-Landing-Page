@@ -33,10 +33,77 @@
 
 /* Basic style - End */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--foreground);
     background-color: var(--background);
     /* position: relative; */
+}
+
+.right-side-nav {
+    display: flex;
+    gap: 32px;
+    z-index: 40;
+    position: fixed;
+    top: 50vh;
+    transform: translateY(-50%);
+    right: 80px;
+    height: 40vh;
+}
+
+.right-side-nav ul {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+}
+
+.right-side-nav ul {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    /* justify-content: space-between; */
+    height: 100%;
+}
+
+.right-side-nav li {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: var(--normalFontSize);
+    font-weight: 700;
+    font-family: var(--formalFont1);
+    height: calc(100% / 4);
+    cursor: pointer;
+    transition: all 150ms linear;
+}
+
+.right-side-nav li a {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: var(--formalFont1);
+    transition: all 150ms linear;
+}
+
+.right-side-nav li a:hover {
+    color: rgba(255, 255, 255, 0.466);
+}
+
+.section-indicator-bar {
+    height: 100%;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.349);
+}
+
+.section-indicator {
+    height: calc(100% / 4);
+    background-color: white;
+    transition: transform 300ms linear;
 }
 
 /* Hero Section Images - Start */
@@ -58,11 +125,11 @@ body {
     /* background-size: contain; */
     background-size: cover;
     background-repeat: no-repeat;
+    /* top: 30vh; */
+    /* top: 464px; */
     height: 100vh;
     position: absolute;
     top: 40vh;
-    /* top: 30vh; */
-    /* top: 464px; */
     left: 0;
     right: 0;
     z-index: -1;
@@ -116,10 +183,21 @@ body {
     z-index: 25;
     left: 0;
     right: 0;
-    height: 400px;
+    height: 402px;
     /* inset: 1200px 0 auto 0; */
     /* height: 630px; */
     /* width: 1920px; */
+    background: #0B1D26;
+    background: linear-gradient(0deg, rgba(11, 29, 38, 1) 20%, rgba(11, 29, 38, 0) 100%);
+}
+
+.bg-layer3-black-white {
+    z-index: 18;
+    height: 402px;
+    position: absolute;
+    top: calc(40vh + 100vh - 400px);
+    left: 0;
+    right: 0;
     background: #0B1D26;
     background: linear-gradient(0deg, rgba(11, 29, 38, 1) 20%, rgba(11, 29, 38, 0) 100%);
 }
@@ -227,15 +305,15 @@ main {
     /* transition: opacity 150ms linear; */
 }
 
-.hero-section .scroll-down{
+.hero-section .scroll-down {
     font-weight: 800;
 }
 
-.hero-section .start-dash{
-    min-width: 72px!important;
+.hero-section .start-dash {
+    min-width: 72px !important;
 }
 
-.hero-section-view-placeholder{
+.hero-section-view-placeholder {
     position: absolute;
     top: 0;
     height: 100vh;
@@ -353,12 +431,12 @@ main {
     overflow: hidden;
 }
 
-.info-image:nth-child(odd){
+.info-image:nth-child(odd) {
     opacity: 0;
     transform: translateX(50px);
 }
 
-.info-image:nth-child(even){
+.info-image:nth-child(even) {
     opacity: 0;
     transform: translateX(-50px);
 }
@@ -511,7 +589,7 @@ footer .copyright {
     }
 
     .bg-layer2-black-white {
-        top: calc(200vh - 40vh - 400px);
+        top: calc(200vh - 60vh - 400px);
     }
 
     nav {
@@ -644,7 +722,7 @@ footer .copyright {
         ;
     }
 
-    .hero-section{
+    .hero-section {
         max-width: 698px;
     }
 
