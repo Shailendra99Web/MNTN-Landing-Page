@@ -108,7 +108,7 @@ body {
 
 /* Hero Section Images - Start */
 .image1-cloud {
-    background-image: url(/assets/images/HG.png);
+    background-image: url(../assets/images/HG.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -121,7 +121,7 @@ body {
 }
 
 .image2-mountains {
-    background-image: url(/assets/images/MG.png);
+    background-image: url(../assets/images/MG.png);
     /* background-size: contain; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -136,7 +136,7 @@ body {
 }
 
 .image3-person-on-mountain {
-    background-image: url(/assets/images/VG.png);
+    background-image: url(../assets/images/VG.png);
     /* background-size: contain; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -781,9 +781,6 @@ footer .copyright {
     }
 
     .image2-mountains {
-        background-image: url(/assets/images/MG.png);
-        /* background-size: contain; */
-        background-size: cover;
         background-position: center;
         top: 50vh;
         /* top: 464px; */
