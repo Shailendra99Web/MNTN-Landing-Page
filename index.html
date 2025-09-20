@@ -5,12 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MNTN | Landing Page</title>
+    <meta name="description"
+        content="MNTN - Be prepared for the mountains and beyond! Discover your next slope, mountain & destination with our hiking guide, equipment info, and blog.">
+
+    <!-- To load background image (LCP) faster -->
+    <link rel="preload" as="image" href="assets/images/HG.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/MG.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/VG.webp" fetchpriority="high">
+
     <link rel="stylesheet" href="./css/utils.css">
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+    <!-- <link rel="preload" fetchpriority="high" as="image" href="./assets/images/HG.png" type="image/png">
+    <link rel="preload" fetchpriority="high" as="image" href="./assets/images/MR.png" type="image/png">
+    <link rel="preload" fetchpriority="high" as="image" href="./assets/images/VG.png" type="image/png"> -->
 </head>
 
 <body>
-    <div class="layer-background-color"></div>
+    <div class="layer-background-color" aria-hidden="true" aria-disabled="true"></div>
     <div class="hero-section-view-placeholder"></div>
     <div class="right-side-nav">
         <ul>
@@ -27,12 +39,12 @@
     <!-- Info Card Component -->
     <template class="info-card-template">
         <div class="info-card">
-            <div class="info-serial-no"></div>
+            <div class="info-serial-no" aria-hidden="true" aria-disabled="true"></div>
             <!-- <div class="half-box-text"> -->
             <div class="half-box-text">
                 <div class="subtitle">
                     <span class="start-dash"></span>
-                    <h3 class="font-roboto"></h3>
+                    <span class="subtitle-text font-roboto"></span>
                 </div>
                 <h2 class="title"></h2>
                 <p class="description"></p>
@@ -47,19 +59,19 @@
         </div>
     </template>
 
-    <div id="image1-cloud" class="image1-cloud" aria-label="Background Image">
+    <div id="image1-cloud" class="image1-cloud">
         <!-- <img src="./assets/images/HG.png" alt=""> -->
     </div>
-    <div class="image2-mountains" aria-label="Background Image">
+    <div class="image2-mountains">
         <!-- <img src="./assets/images/MG.png" alt=""> -->
     </div>
-    <div class="image3-person-on-mountain" aria-label="Background Image">
+    <div class="image3-person-on-mountain">
         <!-- <img src="./assets/images/VG.png" alt=""> -->
     </div>
-    <div class="bg-layer0-black-white" aria-label="Background image top layer"></div>
-    <div class="bg-layer1-black-white" aria-label="Background image top layer"></div>
-    <div class="bg-layer2-black-white" aria-label="Background image top layer"></div>
-    <div class="bg-layer3-black-white" aria-label="Background image top layer"></div>
+    <div class="bg-layer0-black-white"></div>
+    <div class="bg-layer1-black-white"></div>
+    <div class="bg-layer2-black-white"></div>
+    <div class="bg-layer3-black-white"></div>
     <nav>
         <div class="logo">MNTN</div>
         <ul class="nav-items">
@@ -78,7 +90,7 @@
         <div class="hero-section">
             <div class="subtitle">
                 <span class="start-dash"></span>
-                <h3 class="font-roboto">A HIKING GUIDE</h3>
+                <span class="subtitle-text font-roboto">A HIKING GUIDE</span>
             </div>
             <div>
                 <h1>Be Prepared For The Mountains And Beyond!</h1>
@@ -102,7 +114,7 @@
 
         <div class="footer-navlinks">
             <div>
-                <h5>More on The Blog</h5>
+                <div class="footer-navlinks-header">More on The Blog</div>
                 <ul>
                     <li><a href="/">About MNTN</a></li>
                     <li><a href="/">Contributors & Writers</a></li>
@@ -112,7 +124,7 @@
                 </ul>
             </div>
             <div>
-                <h5>More on MNTN</h5>
+                <div class="footer-navlinks-header">More on MNTN</div>
                 <ul>
                     <li><a href="/">The Team</a></li>
                     <li><a href="/">Jobs</a></li>
@@ -124,5 +136,10 @@
 
 </body>
 <script src="./main.js" type="module"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
 </html>

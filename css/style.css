@@ -1,5 +1,5 @@
 /* Basic styles - Start */
-@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
 
 :root {
     --background: #0B1D26;
@@ -115,7 +115,7 @@ body {
 
 /* Hero Section Images - Start */
 .image1-cloud {
-    background-image: url(../assets/images/HG.png);
+    background-image: url(../assets/images/HG.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -128,7 +128,7 @@ body {
 }
 
 .image2-mountains {
-    background-image: url(../assets/images/MG.png);
+    background-image: url(../assets/images/MG.webp);
     /* background-size: contain; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -143,7 +143,7 @@ body {
 }
 
 .image3-person-on-mountain {
-    background-image: url(../assets/images/VG.png);
+    background-image: url(../assets/images/VG.webp);
     /* background-size: contain; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -337,6 +337,11 @@ main {
     align-items: center;
 }
 
+.subtitle-text{
+    font-size: var(--normalFontSize);
+    font-family: var(--formalFont1);
+}
+
 .start-dash {
     display: inline-block;
     background-color: var(--secondary);
@@ -495,7 +500,7 @@ footer .copyright {
 footer .copyright {
     max-width: auto;
     text-wrap: nowrap;
-    color: rgba(255, 255, 255, 0.400);
+    color: #A2A8AA;
 }
 
 .footer-navlinks {
@@ -503,7 +508,8 @@ footer .copyright {
     gap: 212px;
 }
 
-.footer-navlinks h5 {
+.footer-navlinks .footer-navlinks-header {
+    font-weight: 600;
     color: var(--secondary);
     font-size: 24px;
     line-height: var(--normalLineHight);
@@ -675,7 +681,7 @@ footer .copyright {
 
     .footer-info-about-us p,
     .footer-navlinks ul a,
-    .footer-navlinks h5 {
+    .footer-navlinks .footer-navlinks-header {
         font-weight: 900;
     }
 

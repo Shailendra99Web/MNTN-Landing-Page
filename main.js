@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Same on touch
     rightSideNav.addEventListener('touchstart', () => {
         rightSideNavOpacityTimeout.opacity = 1
-    })
+    }, { passive: true })
     rightSideNav.addEventListener('touchend', () => {
         rightSideNavOpacityTimeout.opacity = 0
-    })
+    }, { passive: true })
 
     // Background images
     const image1Cloud = $('.image1-cloud');
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const clone$ = (selector) => clone.querySelector(selector);
 
         clone$('.info-serial-no').innerText = String(index).padStart(2, '0');
-        clone$('.subtitle h3').innerText = subtitle;
+        clone$('.subtitle .subtitle-text').innerText = subtitle;
         clone$('.title').innerText = title;
         clone$('.description').innerText = description;
         clone$('.info-image').src = image;
@@ -235,9 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
     navUserAccountBox.addEventListener('touchstart', (e) => {
         e.preventDefault();
         navUserAccountBox.querySelector('img').src = './assets/icons/profile-icon-yellow.svg';
-    });
+    },
+        { passive: true });
     navUserAccountBox.addEventListener('touchend', (e) => {
         e.preventDefault();
         navUserAccountBox.querySelector('img').src = './assets/icons/profile-icon.svg';
-    });
+    },
+        { passive: true });
 });
