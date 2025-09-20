@@ -62,6 +62,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const thresholds = Array.from({ length: 101 }, (_, i) => i / 100); // 0,0.01,0.02,..., 0.99, 1 // For observers.
 
+    // Observer for all background images animation - slight position changing while scrolling.
+    const observerReducerAllBackgroundImages = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            const ratio = entry.intersectionRatio; // 0〜1
+            const top = entry.boundingClientRect.top;
+            if (ratio > 0.6) {
+                sectionIndicator.style.transform = `translateY(${0}00%)`; // To scroll the right side navbar indicator.
+                rightSideNavOpacityTimeout.opacity = 1; // To disapper the right side navbar.
+            }
+            const slide = 150 * (1 - Math.max(0, Math.min(1, ratio))); // 可視率が低いほど数値↑（0→50）
+            const slide2 = 50 * (1 - Math.max(0, Math.min(1, ratio)));
+            const slide3 = 20 * (1 - Math.max(0, Math.min(1, ratio)));
+            entry.target.style.transform = `translateY(-${slide}px)`; // 0→-50px
+            image2Mountains.style.transform = `translateY(-${slide2}px)`; // 0→-50px
+            bgLayer3BlackWhite.style.transform = `translateY(-${slide2}px)`; // 0→-50px
+            image3PersonOnMountain.style.transform = `translateY(${slide3}px)`; // 0→-50px
+
+        })
+    }, {
+        threshold: thresholds
+    });
+
+    // Observer for hero section opacity animation.
+    const observerReducerheroSectionOpacity = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            const ratio = entry.intersectionRatio;
+            heroSection.style.opacity = ratio;
+        })
+    }, {
+        threshold: thresholds
+    });
+
+    // Adding observers on background images, hero section for animation / transition.
+    observerReducerAllBackgroundImages.observe(image1Cloud);
+    observerReducerheroSectionOpacity.observe(heroSectionViewPlaceholder);
+
     // To create info card using template element.
     function createInfoCard(index, subtitle, title, description, image) {
         const template = $('.info-card-template');
@@ -186,46 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     createInfoCards(); // Start appending all cards one-by-one and, will also add observers.
-
-    // Observer for all background images animation - slight position changing while scrolling.
-    const observerReducerAllBackgroundImages = new IntersectionObserver((entries, observer) => {
-        // const locked = false;
-        entries.forEach((entry) => {
-            const ratio = entry.intersectionRatio || 0; // 0〜1
-            const top = entry.boundingClientRect.top;
-            if (ratio > 0.6) {
-                sectionIndicator.style.transform = `translateY(${0}00%)`; // To scroll the right side navbar indicator.
-                rightSideNavOpacityTimeout.opacity = 1; // To disapper the right side navbar.
-            }
-            if (top < 0) {
-                return;
-            }
-            const slide = 200 * (1 - Math.max(0, Math.min(1, ratio))); // 可視率が低いほど数値↑（0→50）
-            const slide2 = 50 * (1 - Math.max(0, Math.min(1, ratio)));
-            const slide3 = 20 * (1 - Math.max(0, Math.min(1, ratio)));
-            entry.target.style.transform = `translateY(-${slide}px)`; // 0→-50px
-            image2Mountains.style.transform = `translateY(-${slide2}px)`; // 0→-50px
-            bgLayer3BlackWhite.style.transform = `translateY(-${slide2}px)`; // 0→-50px
-            image3PersonOnMountain.style.transform = `translateY(${slide3}px)`; // 0→-50px
-
-        })
-    }, {
-        threshold: thresholds
-    });
-
-    // Observer for hero section opacity animation.
-    const observerReducerheroSectionOpacity = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            const ratio = entry.intersectionRatio;
-            heroSection.style.opacity = ratio;
-        })
-    }, {
-        threshold: thresholds
-    });
-
-    // Adding observers on background images, hero section for animation / transition.
-    observerReducerAllBackgroundImages.observe(image1Cloud);
-    observerReducerheroSectionOpacity.observe(heroSectionViewPlaceholder);
 
     // Account button - onhover / ontouch icon change (white -> yellow) 
     navUserAccountBox.addEventListener('mouseenter', () => {
